@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+
+  <!--
+    - El animated solo anda en ios
+    - debounce es cuantos ms espera para hacer la busqueda despues de dejar de tipear
+      es util para no hacer muchisimas mas peticiones http de las que se necesitan,
+      eso en el caso de que la informacion no sea local
+  -->
+  <ion-searchbar placeholder="Buscar album" animated inputmode="text" (ionChange)="onSearchChange($event)"
+    debounce="250"></ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <!-- El pipe por defecto recibe el argumento q esta antes del |\
+         Si queremos mandar un argumento extra, usamos nombrePipe: argumento1: argumento2...etcetera
+    -->
+    <ion-item *ngFor="let album of albumes | filtro: textoBuscar: 'title'">
+      <ion-label>{{album.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,71 @@
+<app-header titulo="Fab"></app-header>
+
+<ion-content>
+  <!-- fab placed to the top end -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+
+    <!--
+        Para cambiar los colores, ir a https://ionicframework.com/docs/theming/color-generator/
+        modificas solo el primary al que vos queres, y abajo se te generan todos los contrastes y demas automaticamente
+
+        Luego hay que ir a theme/variables.scss, copiar dentro de :root los colores que quiero, en este caso
+        se van a ver colores de las redes sociales personalizados por mi (no son exactos pero casi)
+
+        NOTA: Cuando lo copio y pego de la pagina web de color generator, te va a copiar con el
+        --ion-color-primary (si modificaste ese color), no olvidar de cambiar el nombre primary por el deseado
+        si no pisas el ya existente primary
+
+        //Vimeo
+        --ion-color-vimeo: #5bbcff;
+        --ion-color-vimeo-rgb: 91,188,255;
+        --ion-color-vimeo-contrast: white;
+        --ion-color-vimeo-contrast-rgb: 0,0,0;
+        --ion-color-vimeo-shade: #50a5e0;
+        --ion-color-vimeo-tint: #6bc3ff;
+
+        y al final de todo, fuera de toda llave {}, pegar esto, reemplazando el nombre por el color
+
+        .ion-color-vimeo {
+          --ion-color-base: var(--ion-color-vimeo) !important;
+          --ion-color-base-rgb: var(--ion-color-vimeo-rgb) !important;
+          --ion-color-contrast: var(--ion-color-vimeo-contrast) !important;
+          --ion-color-contrast-rgb: var(--ion-color-vimeo-contrast-rgb) !important;
+          --ion-color-shade: var(--ion-color-vimeo-shade) !important;
+          --ion-color-tint: var(--ion-color-vimeo-tint) !important;
+        }
+
+    -->
+    <ion-fab-list side="top">
+      <ion-fab-button color="facebook"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      <ion-fab-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+      <ion-fab-button color="youtube"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button color="vimeo"><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+      <ion-fab-button color="google"><ion-icon name="logo-google"></ion-icon></ion-fab-button>
+      <ion-fab-button color="github"><ion-icon name="logo-github"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-list>
+    <ion-item *ngFor="let item of data; let i = index">
+      <ion-label>item {{i}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

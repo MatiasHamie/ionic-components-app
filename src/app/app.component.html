@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-split-pane when="md" contentId="main">
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <!-- oculta el menu cuando alguien lo toca -->
+          <ion-menu-toggle *ngFor="let c of componentes | async" auto-hide="false">
+            <!-- Si queremos que aparezca al lado de cada item de la lista la flechita pegada a la derecha
+          del estilo de ios, tenemos q poner detail, o detail="true" -->
+            <ion-item [routerLink]="c.redirectTo" detail="true">
+              <ion-icon [name]="c.icon" slot="start"></ion-icon>
+              {{c.name}}
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+
+</ion-app>

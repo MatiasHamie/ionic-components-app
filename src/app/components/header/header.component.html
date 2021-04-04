@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <!-- Cuando la aplicacion arranca en esta pagina, no tiene un stack de paginas
+    para saber cual fue la anterior, por eso tengo q ponerle la defaultHref por las dudas
+
+    Para que no quede en renglones separados hay que ponerle si o si el slot=""
+
+    Para forzar que se vea siempre de un estilo especifico, ponemos mode ios o md (android es material design)
+  -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary" mode="ios">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Click me
+      </ion-back-button>
+    </ion-buttons>
+
+    <!-- La clase que tiene autocapitaliza la primer letra de cada palabras -->
+    <ion-title class="ion-text-capitalize">{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>

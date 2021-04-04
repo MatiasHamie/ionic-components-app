@@ -1,0 +1,25 @@
+<app-header titulo="Grid"></app-header>
+
+<!-- El fullscreen hace que si el header tiene la prop translucent en true
+este se vea transparente cuando hacemos scroll , en ios se nota mas que en android-->
+<ion-content class="ion-padding" fullscreen>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col  size="12" size-lg="3" size-md="4" size-sm="6"
+                *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+        <ion-card>
+          <ion-img src="assets/stan-lee.jpg"></ion-img>
+        </ion-card>
+
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, voluptatem.
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
